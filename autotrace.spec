@@ -1,6 +1,6 @@
 Name:           autotrace
 Version:        0.31.1
-Release:        25%{?dist}
+Release:        26%{?dist}
 
 Summary:        Utility for converting bitmaps to vector graphics
 
@@ -22,6 +22,7 @@ BuildConflicts: pstoedit-devel
 
 Patch0:         autotrace-0.31.1-GetOnePixel.patch
 Patch1:         autotrace-aclocal18.patch
+Patch2:         autotrace-0.31.1-multilib.patch
 
 %description
 AutoTrace is a program for converting bitmaps to vector graphics.
@@ -47,6 +48,7 @@ This package contains header files and static libraries for autotrace.
 %setup -q
 %patch0 -p1 -b .GetOnePixel
 %patch1 -p0 -b .aclocal18
+%patch2 -p1 -b .multilib
 
 %build
 %configure
@@ -94,6 +96,10 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Mon Nov 29 2010 Jaroslav Škarvada <jskarvad@redhat.com> - 0.31.1-26
+- Fixed multilib conflict
+  Resolves: rhbz#658057
+
 * Mon May 17 2010 Radek Vokal <rvokal@redhat.com> - 0.31.1-25
 - fix the description
 - Resolves: #591669
