@@ -1,6 +1,6 @@
 Name:           autotrace
 Version:        0.31.1
-Release:        35%{?dist}
+Release:        37%{?dist}
 Summary:        Utility for converting bitmaps to vector graphics
 Group:          Applications/Multimedia
 License:        GPLv2+ and LGPLv2+
@@ -90,6 +90,12 @@ find $RPM_BUILD_ROOT -type f -name "*.a" -exec rm -f {} ';'
 
 
 %changelog
+* Fri Jan 24 2014 Daniel Mach <dmach@redhat.com> - 0.31.1-37
+- Mass rebuild 2014-01-24
+
+* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 0.31.1-36
+- Mass rebuild 2013-12-27
+
 * Fri Jul 19 2013 Jaroslav Škarvada <jskarvad@redhat.com> - 0.31.1-35
 - Fixed multilib conflict in devel package (by multilib-fix patch)
 - Removed rpaths
