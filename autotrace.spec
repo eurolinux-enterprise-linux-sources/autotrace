@@ -1,6 +1,6 @@
 Name:           autotrace
 Version:        0.31.1
-Release:        26%{?dist}
+Release:        28%{?dist}
 
 Summary:        Utility for converting bitmaps to vector graphics
 
@@ -9,7 +9,7 @@ License:        GPLv2+ and LGPLv2+
 URL:            http://autotrace.sourceforge.net/
 Source0:        http://dl.sf.net/autotrace/autotrace-0.31.1.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
-BuildRequires:  ImageMagick-devel
+BuildRequires:  ImageMagick-devel >= 6.7.2.7
 BuildRequires:  libpng-devel > 2:1.2
 BuildRequires:  libexif-devel
 BuildRequires:  libtiff-devel
@@ -96,6 +96,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Thu Feb 19 2015 Jan Horak <jhorak@redhat.com> - 0.31.1-28
+- Rebuild due to updated ImageMagick
+
 * Mon Nov 29 2010 Jaroslav Škarvada <jskarvad@redhat.com> - 0.31.1-26
 - Fixed multilib conflict
   Resolves: rhbz#658057
